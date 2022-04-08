@@ -237,7 +237,7 @@ mappings.execute_keymap = function(prompt_bufnr, keymap_identifier)
   assert(key_func, string.format("Unsure of how we got this failure: %s %s", prompt_bufnr, keymap_identifier))
 
   key_func(prompt_bufnr)
-  vim.api.nvim_do_autocmd("User TelescopeKeymap", {})
+  vim.api.nvim_exec_autocmds("User TelescopeKeymap", {})
 end
 
 mappings.clear = function(prompt_bufnr)
